@@ -1,0 +1,271 @@
+@import 'basic';
+
+.main {
+    width: 100vw;
+}
+.player {
+    padding: 12px;
+    max-width: 300px;
+    margin: auto;
+    // background-color: rgb(13, 13, 15);
+
+    
+}
+.playing {
+    & .icon-pause {
+        display: block !important;
+    }
+    & .icon-play {
+        display: none !important;
+    }
+}
+.dashboard {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 300px;
+    background-color: rgb(13, 13, 15); 
+    margin-top: 50px;
+    padding: 12px 12px 0 12px;
+}
+header {
+    padding: 12px 0;
+    text-align: center;
+    position: relative;
+    line-height: 2rem;
+    .heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h4 {
+            font-size: 1.4rem;
+            color: $text-color;
+            text-align: center;
+            height: 100%;
+            line-height:2rem;
+        }
+
+        i{
+            margin: 4px 0 0 4px;
+            color: $text-color;
+        }
+    }
+
+    .list-music {
+        color: $text-color;
+        font-size: 1.4rem;
+        padding:  12px ;
+        margin-right: 8px;
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+}
+
+.cd {
+    width: 200px;
+    margin: 0 auto;
+
+    .cd-thumb{
+        padding-top: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 10px;
+        box-shadow: 0 3px 20px #000;
+    }
+}
+
+.nameSong {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    h2 {
+        padding-left: 24px;
+        background: linear-gradient(to right, $primary-color, #ebebeb);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+
+    i {
+        padding-right: 12px;
+        font-size: 1.6rem;
+        margin-top: 3px;
+        background: linear-gradient(135deg, $primary-color, #ebebeb);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+    }
+}
+
+.nameWriter {
+    padding-top: 6px;
+    h2 {
+        color: $text-color;
+        font-size: 1.2rem;
+        padding-left: 24px;
+    }
+}
+
+#progress {
+    margin: 12px 6px;
+    padding: 6px;
+    position: relative;
+    
+    .progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        -webkit-appearance: none;
+
+        &::-webkit-slider-thumb {
+            width: 12px;
+            height: 12px;
+            border: 3.5px solid $primary-color;
+            border-radius: 50%;
+            background: $text-color;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+
+
+        }
+        &::-webkit-slider-progress {
+            border-radius: 4px;
+            height: 4px;
+            width: 100%;
+            -webkit-appearance: none;    
+        }
+    }
+
+    .progressBar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        background-color: $primary-color;
+        height: 4px;
+    }
+}
+
+.control {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    // padding: 4px 0 4px;
+    margin-bottom: 16px;
+    .btn {
+        padding: 12px 13px;
+
+    }
+    .btn-repeat {
+        color: $text-color;
+    }
+    .btn-prev {
+        color: #ebebeb;
+    }
+    .btn-toggle-play { 
+        border-radius: 50%;
+        background: linear-gradient(to right, $primary-color, #ebebeb 34%);
+        .icon-pause {
+            display: none;
+        }
+        .icon-play {
+            display: block;
+        }
+    }
+    .btn-next {
+        color: #ebebeb;
+    }
+    .btn-random {
+        color: $text-color;
+    }
+}
+
+.playlist {
+    // position: absolute;
+    background-color: rgb(13, 13, 15);
+    margin-top: 436px;
+    min-width: 300px;
+    padding: 12px;
+    .song {
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 24px;
+        box-shadow: 0 1px 2px rgba(#000, 0.5);
+        border: 1px solid rgba(#000, 0.1);
+        // @include transition;
+        .thmub {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .body {
+            padding-left: 12px;
+            flex: 1px;
+            .title {
+                background: linear-gradient(to right, $primary-color, #ebebeb 34%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                padding-bottom: 8px;
+                letter-spacing: 1.3px;
+                padding-bottom: 0;
+                margin-bottom: 4px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+            }
+            .author {
+                background: linear-gradient(to right, $primary-color, #ebebeb 30%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-size: 1rem;
+                letter-spacing: 1.3px
+
+            }
+        }
+        .option {
+            color: #fff;
+            padding: 4px;
+            font-size: 1.4rem;
+        }
+        &.active {
+            background: linear-gradient(to right, $primary-color, #ebebeb);
+            border-radius: 24px;
+            
+            .option {
+                color: rgba($color: #000000, $alpha: 0.7);
+            }
+            .title {
+                background: linear-gradient(to right, rgba(#000, 0.8),#838383 34%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-weight: 700;
+            }
+            .author {
+                background: linear-gradient(to right, rgba(#000, 0.8),#838383 34%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-weight: 700;
+            }
+        }
+    }
+}
